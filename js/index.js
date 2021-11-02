@@ -5,16 +5,18 @@ function calculateSubtotal(product) {
   console.log(quantity);
   let subtotal = price * quantity;
   console.log(subtotal);
+
+  product.querySelector('.subtotal span').innerText = subtotal;
   return subtotal;
 }
 
 document.querySelector('.calculate-total').onclick = function (e) {
-  console.log();
-  calculateSubtotal(document);
+  calculateAll();
 };
+
 function calculateAll() {
   let allProducts = document.getElementsByClassName('product');
-  for (let i = 0; i < allProducts.length; i++) {
-    calculateSubtotal(allProducts[i]);
+  for (let product of allProducts) {
+    calculateSubtotal(product);
   }
 }
