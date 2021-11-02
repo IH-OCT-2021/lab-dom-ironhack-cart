@@ -1,10 +1,8 @@
+
 function calculateSubtotal(product) {
   let price = product.querySelector('.price span').innerHTML;
   let quantity = product.querySelector('.quantity input').value;
-  console.log(price);
-  console.log(quantity);
   let subtotal = price * quantity;
-  console.log(subtotal);
 
   product.querySelector('.subtotal span').innerText = subtotal;
   return subtotal;
@@ -15,8 +13,11 @@ document.querySelector('.calculate-total').onclick = function (e) {
 };
 
 function calculateAll() {
+  let total = 0;
   let allProducts = document.getElementsByClassName('product');
   for (let product of allProducts) {
-    calculateSubtotal(product);
+    total += calculateSubtotal(product);
   }
+  document.querySelector('#total-value span').innerText = total;
 }
+
