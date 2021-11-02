@@ -7,3 +7,8 @@ function calculateSubtotal(product){
   console.log(subtotal)
   return subtotal
 }
+
+document.querySelector('.calculate-total').onclick = function (e) {
+  console.log()
+calculateSubtotal(document)
+}
